@@ -1,16 +1,18 @@
-var score = document.getElementById("#score");
-var timer = document.getElementById("#timer");
+var score = document.getElementById("score");
+var timer = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var h1El = document.getElementById("h1");
 var pEl = document.getElementById("p");
-var answerEl = document.getElementById("answers");
+var answersEl = document.getElementById("answers");
+var feedbackEl = document.getElementById("feedback");
+var titleEl = document.getElementById("title");
 
 
 
 // var score = 0;
 // var secondsLeft = 75;
 var currentQuestionIndex = 0;
-// // var titleQuestion;
+
 
 function startQuiz() { 
   startBtn.classList.add("d-none");
@@ -21,22 +23,39 @@ function startQuiz() {
 
 function getAnswers(){
   var currentQuestion = myQuestions[currentQuestionIndex];
-  var titleQuestion = document.getElementById("");
+  var titleQuestion = document.getElementById("title");
   titleQuestion.textContent = currentQuestion.question; 
-  answerEl.innerHTML = "";
+  answersEl.innerHTML = "";
   currentQuestion.answers.forEach(function(answer, i){
     var answerButtons = document.createElement("button");
     answerButtons.setAttribute("class", "btn btn-primary");
-    answerButtons.setAttribute("id", "");
+    answerButtons.setAttribute("id", "answerBtns");
     answerButtons.setAttribute("value", i);
     answerButtons.textContent = i + 1 + ". " + answer;
-    answerButtons.onclick = questionClick;
+    answerButtons.onclick = answerClick;
     answers.appendChild(answerButtons);
-
-  }
-  )
+  } )
 }
-function questionClick(){
+function answerClick(){
+  if (this.value != myQuestions[currentQuestionIndex].correctAnswer){
+    feedbackEl.textContent = "Incorrect";
+  }else {
+    feedbackEl.textContent = "Correct";
+  }
+  currentQuestionIndex++;
+  if(currentQuestionIndex === myQuestions.length){
+   quizResult();
+  //  return;
+  }
+  getAnswers();
+}
+
+function quizResult(){
+titleEl.innerHTML = "";
+h1El.textContent = "All Done!";
+answersEl.classList.add("d-none");
+feedbackEl.innerHTML = "";
+pEl.textContent = "Enter your initials:"
 
 }
 

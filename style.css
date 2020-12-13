@@ -2,3 +2,7 @@
 text-align: end;
 }
 
+#answerBtns{
+  margin: 10px;
+  display: block;
+}
