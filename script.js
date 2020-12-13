@@ -6,7 +6,10 @@ var pEl = document.getElementById("p");
 var answersEl = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
 var titleEl = document.getElementById("title");
-
+var formEl1 = document.getElementById("form1");
+var submitEl = document.getElementById("submit");
+var formEl2 = document.getElementById("form2");
+var goBackEl = document.getElementById("back");
 
 
 // var score = 0;
@@ -52,11 +55,22 @@ function answerClick(){
 
 function quizResult(){
 titleEl.innerHTML = "";
-h1El.textContent = "All Done!";
 answersEl.classList.add("d-none");
 feedbackEl.innerHTML = "";
-pEl.textContent = "Enter your initials:"
-
+formEl1.classList.add("d-block");
 }
 
+function submitResult(){
+  formEl1.innerHTML = "";
+  formEl2.classList.add("d-block");
+}
+function goBack(){
+  location.reload();
+}
+
+
+
 startBtn.addEventListener("click", startQuiz);
+submitEl.addEventListener("click", submitResult);
+goBackEl.addEventListener("click", goBack);
+

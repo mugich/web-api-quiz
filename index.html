@@ -22,7 +22,7 @@
     </nav>
 
     <main class="container">
-      <div class="jumbotron">
+      <div class="jumbotron col-8">
         <p id="title"></p>
         <h1 class="display-4" id="h1">Coding Quiz Challenge!</h1>
         <p class="lead" id="p">
@@ -31,24 +31,33 @@
           seconds!
         </p>
 
-        <a class="btn btn-primary btn-lg" id="start" href="#" role="button"
-          >Start</a
-        >
+        <a class="btn btn-primary btn-lg" id="start" href="#" role="button">Start</a>
 
         <div id="answers"></div>
 
-        <form class="d-none">
+        <form class="d-none" id="form1">
           <div class="form-group">
             <h2>Well Done!</h2>
             <h4 id="score">Your final score:</h4>
             <label for="initials">Enter initials:</label>
             <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
+              type="password"  placeholder="Initials"
+              class="form-control col-2"
+              id="exampleInputPassword1"/>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="submit" type="submit"class="btn btn-primary">Submit</button>
+        </form>
+
+        <form class="d-none" id="form2">
+          <div class="form-group">
+            <h4 id="score">HighScores</h4>
+            <input
+              type="password"  placeholder=""
+              class="form-control col-3"
+              id="exampleInputPassword1"/>
+          </div>
+          <button id="back" type="submit"class="btn btn-primary">Go Back</button>
+          <button id="submit" type="submit"class="btn btn-primary">Clear HighScores</button>
         </form>
         <div id="feedback"></div>
       </div>
