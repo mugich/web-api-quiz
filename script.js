@@ -1,4 +1,3 @@
-var score = document.getElementById("score");
 var timer = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var h1El = document.getElementById("h1");
@@ -10,9 +9,10 @@ var formEl1 = document.getElementById("form1");
 var submitEl = document.getElementById("submit");
 var formEl2 = document.getElementById("form2");
 var goBackEl = document.getElementById("back");
+var finalScoreEl = document.getElementById("finalScore")
 
 
-// var score = 0;
+var score = 0;
 // var secondsLeft = 75;
 var currentQuestionIndex = 0;
 
@@ -44,6 +44,8 @@ function answerClick(){
     feedbackEl.textContent = "Incorrect";
   }else {
     feedbackEl.textContent = "Correct";
+    score ++;
+    
   }
   currentQuestionIndex++;
   if(currentQuestionIndex === myQuestions.length){
@@ -57,7 +59,9 @@ function quizResult(){
 titleEl.innerHTML = "";
 answersEl.classList.add("d-none");
 feedbackEl.innerHTML = "";
-formEl1.classList.add("d-block");
+formEl1.classList.add("d-block")
+finalScoreEl.textContent = score;
+
 }
 
 function submitResult(){
