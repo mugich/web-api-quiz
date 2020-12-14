@@ -27,6 +27,7 @@ startBtn.addEventListener("click", function(){
   setTime();
 });
 
+
 function getAnswers(){
     var currentQuestion = myQuestions[currentQuestionIndex]; 
     titleQuestion.textContent = currentQuestion.question; 
@@ -60,12 +61,13 @@ function answerClick(){
 }
 
 function quizResult(){
-titleEl.innerHTML = "";
-answersEl.classList.add("d-none");
-feedbackEl.innerHTML = "";
-formEl1.classList.add("d-block")
-finalScoreEl.textContent = score;
-}
+  titleEl.innerHTML = "";
+  answersEl.classList.add("d-none");
+  feedbackEl.innerHTML = "";
+  formEl1.classList.add("d-block")
+  finalScoreEl.textContent = score;
+  }
+
 
 function setTime(){
   var timeInterval = setInterval(function(){
@@ -84,8 +86,12 @@ submitEl.addEventListener("click", function() {
   localStorage.setItem(initialsEl.value, score);
 });
 
-// var init = localStorage.getItem(initialsEl.value);
 
+ var storedScore = JSON.parse(localStorage.getItem(initialsEl.value));
+
+
+
+// restart quiz
 goBackEl.addEventListener("click" ,function() {
   location.reload();
   });

@@ -6,3 +6,6 @@ text-align: end;
   margin: 10px;
   display: block;
 }
+.jumbotron{
+  background-color: white;
+}
