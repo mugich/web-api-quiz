@@ -11,7 +11,7 @@ var myQuestions = [
   {
     question: "How can we declare variable in javascript", 
     answers: 
-       ["Flot",
+       ["Float",
        "Int",
        "Datatype",
        "Var"],   

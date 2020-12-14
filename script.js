@@ -10,21 +10,22 @@ var formEl1 = document.getElementById("form1");
 var submitEl = document.getElementById("submit");
 var formEl2 = document.getElementById("form2");
 var goBackEl = document.getElementById("back");
-var finalScoreEl = document.getElementById("finalScore")
+var finalScoreEl = document.getElementById("finalScore");
+var initialsEl = document.getElementById("initials");
 
 
 var score = 0;
 var secondsLeft = 75;
 var currentQuestionIndex = 0;
 
-
-function startQuiz() { 
+//start quiz
+startBtn.addEventListener("click", function(){ 
   startBtn.classList.add("d-none");
   h1El.innerHTML = "";
   pEl.innerHTML = ""; 
   getAnswers();
   setTime();
-}
+});
 
 function getAnswers(){
     var currentQuestion = myQuestions[currentQuestionIndex]; 
@@ -38,8 +39,9 @@ function getAnswers(){
     answerButtons.textContent = i + 1 + ". " + answer;
     answerButtons.onclick = answerClick;
     answers.appendChild(answerButtons);
-  } )
+  });
 }
+
 function answerClick(){
   if (this.value != myQuestions[currentQuestionIndex].correctAnswer){
     secondsLeft -= 10;
@@ -52,7 +54,7 @@ function answerClick(){
   currentQuestionIndex++;
   if(currentQuestionIndex === myQuestions.length){
    quizResult();
-  //  return;
+  return;
   }
    getAnswers();
 }
@@ -63,8 +65,8 @@ answersEl.classList.add("d-none");
 feedbackEl.innerHTML = "";
 formEl1.classList.add("d-block")
 finalScoreEl.textContent = score;
-
 }
+
 function setTime(){
   var timeInterval = setInterval(function(){
     secondsLeft--;
@@ -73,24 +75,17 @@ function setTime(){
       clearInterval(timeInterval);
     }
 
-  }, 1000)
+  }, 1000);
 }
-
-function submitResult(){
+// submit initials
+submitEl.addEventListener("click", function() {
   formEl1.innerHTML = "";
   formEl2.classList.add("d-block");
-}
+  localStorage.setItem(initialsEl.value, score);
+});
 
-function storeResult(){
+// var init = localStorage.getItem(initialsEl.value);
 
-}
-function goBack(){
- location.replace();
-}
-
-
-
-startBtn.addEventListener("click", startQuiz);
-submitEl.addEventListener("click", submitResult);
-goBackEl.addEventListener("click", goBack);
-
+goBackEl.addEventListener("click" ,function() {
+  location.reload();
+  });
