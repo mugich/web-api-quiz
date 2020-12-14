@@ -1,7 +1,8 @@
-var timer = document.getElementById("timer");
+var timerEl = document.getElementById("timer");
 var startBtn = document.getElementById("start");
 var h1El = document.getElementById("h1");
 var pEl = document.getElementById("p");
+var titleQuestion = document.getElementById("title");
 var answersEl = document.getElementById("answers");
 var feedbackEl = document.getElementById("feedback");
 var titleEl = document.getElementById("title");
@@ -13,7 +14,7 @@ var finalScoreEl = document.getElementById("finalScore")
 
 
 var score = 0;
-// var secondsLeft = 75;
+var secondsLeft = 75;
 var currentQuestionIndex = 0;
 
 
@@ -22,14 +23,14 @@ function startQuiz() {
   h1El.innerHTML = "";
   pEl.innerHTML = ""; 
   getAnswers();
+  setTime();
 }
 
 function getAnswers(){
-  var currentQuestion = myQuestions[currentQuestionIndex];
-  var titleQuestion = document.getElementById("title");
-  titleQuestion.textContent = currentQuestion.question; 
-  answersEl.innerHTML = "";
-  currentQuestion.answers.forEach(function(answer, i){
+    var currentQuestion = myQuestions[currentQuestionIndex]; 
+    titleQuestion.textContent = currentQuestion.question; 
+    answersEl.innerHTML = "";
+    currentQuestion.answers.forEach(function(answer, i){
     var answerButtons = document.createElement("button");
     answerButtons.setAttribute("class", "btn btn-primary");
     answerButtons.setAttribute("id", "answerBtns");
@@ -41,6 +42,7 @@ function getAnswers(){
 }
 function answerClick(){
   if (this.value != myQuestions[currentQuestionIndex].correctAnswer){
+    secondsLeft -= 10;
     feedbackEl.textContent = "Incorrect";
   }else {
     feedbackEl.textContent = "Correct";
@@ -52,7 +54,7 @@ function answerClick(){
    quizResult();
   //  return;
   }
-  getAnswers();
+   getAnswers();
 }
 
 function quizResult(){
@@ -63,13 +65,27 @@ formEl1.classList.add("d-block")
 finalScoreEl.textContent = score;
 
 }
+function setTime(){
+  var timeInterval = setInterval(function(){
+    secondsLeft--;
+    timerEl.textContent = secondsLeft;
+    if(secondsLeft === 0 || currentQuestionIndex === myQuestions.length){
+      clearInterval(timeInterval);
+    }
+
+  }, 1000)
+}
 
 function submitResult(){
   formEl1.innerHTML = "";
   formEl2.classList.add("d-block");
 }
+
+function storeResult(){
+
+}
 function goBack(){
-  location.reload();
+ location.replace();
 }
 
 
