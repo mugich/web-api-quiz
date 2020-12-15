@@ -22,13 +22,6 @@ THEN You can save my initials and score
 * API-DOM
 * Bootstrap
 
-### Application's appearance
-![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
-
-
 ### Research Link
 
 * [Google](https://www.google.com)
@@ -44,6 +37,6 @@ THEN You can save my initials and score
 
 ### Application's appearance
 ![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
-![screenshot](./assets/quiz1.png)
+![screenshot](./assets/quiz2.png)
+![screenshot](./assets/quiz3.png)
+![screenshot](./assets/quiz4.png)
