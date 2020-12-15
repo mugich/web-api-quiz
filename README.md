@@ -31,9 +31,9 @@ THEN You can save my initials and score
 
 ## Application links
 
-* [deployed application](https://mugich.github.io/password-generator/)
+* [deployed application](https://mugich.github.io/web-api-quiz/)
 
-* [GitHub repositories](https://github.com/mugich/password-generator)
+* [GitHub repositories](https://github.com/mugich/web-api-quiz)
 
 ### Application's appearance
 ![screenshot](./assets/quiz1.png)
