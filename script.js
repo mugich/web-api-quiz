@@ -12,6 +12,8 @@ var formEl2 = document.getElementById("form2");
 var goBackEl = document.getElementById("back");
 var finalScoreEl = document.getElementById("finalScore");
 var initialsEl = document.getElementById("initials");
+var initialScoreEl = document.getElementById("initial-score");
+var clearEl = document.getElementById("clear");
 
 
 var score = 0;
@@ -81,17 +83,21 @@ function setTime(){
 }
 // submit initials
 submitEl.addEventListener("click", function() {
+  localStorage.setItem(initialsEl.value, score);
   formEl1.innerHTML = "";
   formEl2.classList.add("d-block");
-  localStorage.setItem(initialsEl.value, score);
+  var storedScore = JSON.parse(localStorage.getItem(initialsEl.value));
+  initialScoreEl.textContent = initialsEl.value + " - " + storedScore;
+  
+ 
 });
-
-
- var storedScore = JSON.parse(localStorage.getItem(initialsEl.value));
-
-
 
 // restart quiz
 goBackEl.addEventListener("click" ,function() {
   location.reload();
   });
+
+  // clears score
+clearEl.addEventListener("click", function(){
+  initialScoreEl.textContent = "";
+});
