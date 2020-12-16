@@ -14,6 +14,7 @@ var finalScoreEl = document.getElementById("finalScore");
 var initialsEl = document.getElementById("initials");
 var initialScoreEl = document.getElementById("initial-score");
 var clearEl = document.getElementById("clear");
+// var initialInputEl = document.getElementById("initialInput");
 
 
 var score = 0;
@@ -88,6 +89,8 @@ submitEl.addEventListener("click", function() {
   formEl2.classList.add("d-block");
   var storedScore = JSON.parse(localStorage.getItem(initialsEl.value));
   initialScoreEl.textContent = initialsEl.value + " - " + storedScore;
+
+ 
   
  
 });

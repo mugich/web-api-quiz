@@ -2,18 +2,10 @@
 
 ## Project Description "Coding Quiz Challenge!"
 
- that incorrect answers will penalize scoreTime by ten seconds!
-This timed coding quiz with five simple questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript. It will have a clean, polished, and responsive user interface. 
+This is a timed coding quiz with five simple questions. Incorrect answers will penalize scoreTime by ten seconds! This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript. It will have a clean, polished, and responsive user interface.
 
-WHEN You click the start button
-THEN a timer starts and I am presented with a question
-WHEN You answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the quiz is over
-THEN You can save my initials and score
+When the user clicks the start button then a timer starts and they will be presented with a question.  When the user answers a question then they are presented with another question. When the user answers a question incorrectly then time is subtracted from the timer.  When all questions are answered or the timer reaches 0  the quiz is over. Then the user can save their initials and score.
+
 
 **Technologies used:** 
 * HTML
@@ -29,7 +21,7 @@ THEN You can save my initials and score
 * [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Glossary/Semantics)
 * [stackoverflow.com/](https://stackoverflow.com//)
 
-## Application links
+### Application links
 
 * [deployed application](https://mugich.github.io/web-api-quiz/)
 
